@@ -25,9 +25,39 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: start;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.page {
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.home-page {
+  /* background-color: #f5f5f5; */
+  text-align: left;
+}
+
+.glossary-page {
+  /* background-color: #fffbe6; */
+  /* background: #e8faff; */
+  /* color: #242424;; */
+  text-align: justify;
+}
+
+.redflags-page h2 {
+  color: #b00020;
+  margin-top: 1.5rem;
+}
+
+.redflags-page ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
 }
 
 h1 {
