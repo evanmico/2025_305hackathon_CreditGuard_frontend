@@ -1,4 +1,20 @@
-:root {
+.page {
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.text {
+  text-align: left;
+  text-indent: 2rem;
+}
+
+.def {
+  text-indent: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -25,9 +41,23 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: start;
   min-width: 320px;
   min-height: 100vh;
+} */
+
+/* .home-page {
+  text-align: left;
+}
+
+.redflags-page h2 {
+  color: #b00020;
+  margin-top: 1.5rem;
+}
+
+.redflags-page ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
 }
 
 h1 {
@@ -65,4 +95,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
