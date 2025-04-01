@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 function BenefitsUpload() {
   const [formData, setFormData] = useState({
-    bank: '',
-    card: '',
-    benefitsLink: '',
+    bankName: '',
+    cardName: '',
+    link: '',
   });
 
   const [responseData, setResponseData] = useState(null);
