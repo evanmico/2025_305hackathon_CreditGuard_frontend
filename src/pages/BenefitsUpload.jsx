@@ -93,6 +93,7 @@ function BenefitsUpload() {
 
       {responseData && (
         <div>
+          <section>
           <h2>📋 Benefits Found</h2>
           <ul>
             {responseData.benefits.map((item, i) => (
@@ -104,12 +105,13 @@ function BenefitsUpload() {
               </li>
             ))}
           </ul>
-
+          </section>
+          <section>
           <h2>🏆 Competitor Cards</h2>
           <ul>
             {responseData.competitorCards.map((card, i) => (
               <li key={i} style={{ marginBottom: '1rem' }}>
-                <strong>{card.cardName}</strong>
+                <strong>The <em>{card.cardName}</em> Card Offered by <em>{card.bankName}</em></strong>
                 <ul style={{ marginLeft: "1rem" }}>
                   {card.benefits.map((benefit, j) => (
                     <li key={j}>{benefit.benefitName}</li>
@@ -118,6 +120,7 @@ function BenefitsUpload() {
               </li>
             ))}
           </ul>
+          </section>
         </div>
       )}
     </div>
