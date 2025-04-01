@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 function BenefitsUpload() {
   const [formData, setFormData] = useState({
-    bank: '',
-    card: '',
-    benefitsLink: '',
+    bankName: '',
+    cardName: '',
+    link: '',
   });
 
   const [responseData, setResponseData] = useState(null);
@@ -54,9 +54,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Bank Name:</label><br />
           <input
             type="text"
-            name="bank"
+            name="bankName"
             style={{maxWidth: "800px"}}
-            value={formData.bank}
+            value={formData.bankName}
             onChange={handleChange}
             required
           />
@@ -66,9 +66,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Card Name:</label><br />
           <input
             type="text"
-            name="card"
+            name="cardName"
             style={{maxWidth: "800px"}}
-            value={formData.card}
+            value={formData.cardName}
             onChange={handleChange}
             required
           />
@@ -78,9 +78,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Link to Benefits / Terms Page:</label><br />
           <input
             type="url"
-            name="benefitsLink"
+            name="link"
             style={{maxWidth: "800px"}}
-            value={formData.benefitsLink}
+            value={formData.link}
             onChange={handleChange}
             required
           />
@@ -92,23 +92,35 @@ function BenefitsUpload() {
       </form>
 
       {responseData && (
-        <div className="results">
+        <div>
+          <section>
           <h2>📋 Benefits Found</h2>
           <ul>
             {responseData.benefits.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-
-          <h2>🏆 Competitor Cards</h2>
-          <ul>
-            {responseData.competitors.map((card, i) => (
               <li key={i}>
-                <strong>{card.name}</strong> from {card.bank}<br />
-                Benefits: {card.benefits.join(', ')}
+                <strong>{item.benefitName}</strong>
+                <p style={{ marginTop: "0.25rem", lineHeight: 1.4 }}>
+                  {item.benefitDescription}
+                </p>
               </li>
             ))}
           </ul>
+          </section>
+          <section>
+          <h2>🏆 Competitor Cards</h2>
+          <ul>
+            {responseData.competitorCards.map((card, i) => (
+              <li key={i} style={{ marginBottom: '1rem' }}>
+                <strong>The <em>{card.cardName}</em> Card Offered by <em>{card.bankName}</em></strong>
+                <ul style={{ marginLeft: "1rem" }}>
+                  {card.benefits.map((benefit, j) => (
+                    <li key={j}>{benefit.benefitName}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          </section>
         </div>
       )}
     </div>
