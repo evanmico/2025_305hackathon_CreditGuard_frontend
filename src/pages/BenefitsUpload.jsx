@@ -54,9 +54,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Bank Name:</label><br />
           <input
             type="text"
-            name="bank"
+            name="bankName"
             style={{maxWidth: "800px"}}
-            value={formData.bank}
+            value={formData.bankName}
             onChange={handleChange}
             required
           />
@@ -66,9 +66,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Card Name:</label><br />
           <input
             type="text"
-            name="card"
+            name="cardName"
             style={{maxWidth: "800px"}}
-            value={formData.card}
+            value={formData.cardName}
             onChange={handleChange}
             required
           />
@@ -78,9 +78,9 @@ function BenefitsUpload() {
           <label style={{ fontWeight: "bold"}}> Link to Benefits / Terms Page:</label><br />
           <input
             type="url"
-            name="benefitsLink"
+            name="link"
             style={{maxWidth: "800px"}}
-            value={formData.benefitsLink}
+            value={formData.link}
             onChange={handleChange}
             required
           />
