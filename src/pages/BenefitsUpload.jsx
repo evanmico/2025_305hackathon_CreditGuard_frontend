@@ -21,7 +21,7 @@ function BenefitsUpload() {
     setResponseData(null);
 
     try {
-      const res = await fetch('http://creditguard-backend-avhvfvaddnhyd0bj.eastus2-01.azurewebsites.net/test', {
+      const res = await fetch('https://creditguard-backend-avhvfvaddnhyd0bj.eastus2-01.azurewebsites.net/test', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
