@@ -92,20 +92,29 @@ function BenefitsUpload() {
       </form>
 
       {responseData && (
-        <div className="results">
+        <div>
           <h2>📋 Benefits Found</h2>
           <ul>
             {responseData.benefits.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>
+                <strong>{item.benefitName}</strong>
+                <p style={{ marginTop: "0.25rem", lineHeight: 1.4 }}>
+                  {item.benefitDescription}
+                </p>
+              </li>
             ))}
           </ul>
 
           <h2>🏆 Competitor Cards</h2>
           <ul>
-            {responseData.competitors.map((card, i) => (
-              <li key={i}>
-                <strong>{card.name}</strong> from {card.bank}<br />
-                Benefits: {card.benefits.join(', ')}
+            {responseData.competitorCards.map((card, i) => (
+              <li key={i} style={{ marginBottom: '1rem' }}>
+                <strong>{card.cardName}</strong>
+                <ul style={{ marginLeft: "1rem" }}>
+                  {card.benefits.map((benefit, j) => (
+                    <li key={j}>{benefit.benefitName}</li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
